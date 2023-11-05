@@ -117,12 +117,6 @@ group by location
 order by 5 desc;
 
 
---What is the average, minimum, and maximum values of daily cases and deaths?
-select location, max(new_cases) ,max(new_cases)
-from CovidDeaths
-where continent is not NULL
-group by location
-order by 1,2;
 
 --Month-wise Progression of Cases and Deaths for each Country
 select location, year(date) as 'Year', month(date) as 'Month' , sum(cast(new_cases as Int)) as Total_Cases, sum(cast(new_deaths as Int)) as Total_Deaths
